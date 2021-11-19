@@ -1,27 +1,25 @@
-import java.util.Scanner;
+package hw211119;
 
 public class Ex211118_01 {
 
 	public static void main(String[] args) {
+		// 1-2+3-4+...+99-100 을 계산하여 답을 출력하시오
 
-		Scanner sc = new Scanner(System.in);
-		
-		System.out.print("반올림 전 값 : ");
-		int num = sc.nextInt();
-		
-		if (num%10>=5) {
-			System.out.print("반올림 후 값 : " + (num/10 +1)*10);
-		} else {
-			System.out.print("반올림 후 값 : " + (num/10)*10);	
+		int sum = 0;
+		int j = 0;
+
+		for (int i = 1; i <= 100; i++) {
+			if (i % 2 == 0) {
+				j = i * (-1);
+			} else {
+				j = i;
+			}
+			System.out.print(j + " ");
+
+			sum += j;
 		}
-		
-		
-		
-		
-		
-		
-		
-		sc.close();
+		System.out.println("");
+		System.out.println("결과 : " + sum);
 	}
 
 }
