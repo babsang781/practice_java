@@ -5,29 +5,29 @@ import java.util.Scanner;
 public class Ex211120_01 {
 
 	public static void main(String[] args) {
-		// µÎ Á¤¼öÀÇ ÃÖ´ë °ø¾à¼ö ÃÖ¼Ò°ø¹è¼ö Ãâ·Â
+		// ë‘ ì •ìˆ˜ì˜ ìµœëŒ€ ê³µì•½ìˆ˜ ìµœì†Œê³µë°°ìˆ˜ ì¶œë ¥
 
-		// ÃÖ´ë°ø¾à¼ö(greatest commom divider)±¸ÇÏ±â
-		// µÎ Á¤¼ö¸¦ ÀÔ·Â ¹Þ´Â´Ù.
-		// 1ºÎÅÍ °¢°¢ÀÇ Á¤¼ö¸¦ ³ª´©°í % µÑ ´Ù 0ÀÎ °ªÀ» Ã£´Â´Ù.
-		// ÇØ´çÇÏ´Â °ªÀ» gcd¿¡ ´ëÀÔÇÑ´Ù
+		// ìµœëŒ€ê³µì•½ìˆ˜(greatest commom divider)êµ¬í•˜ê¸°
+		// ë‘ ì •ìˆ˜ë¥¼ ìž…ë ¥ ë°›ëŠ”ë‹¤.
+		// 1ë¶€í„° ê°ê°ì˜ ì •ìˆ˜ë¥¼ ë‚˜ëˆ„ê³  % ë‘˜ ë‹¤ 0ì¸ ê°’ì„ ì°¾ëŠ”ë‹¤.
+		// í•´ë‹¹í•˜ëŠ” ê°’ì„ gcdì— ëŒ€ìž…í•œë‹¤
 
-		// ÃÖ¼Ò°ø¹è¼ö(least common multiple) ±¸ÇÏ±â
-		// µÎ Á¤¼önum1,2¿¡ gcd¸¦ ³ª´«´Ù.num1/gcd, num2/gcd
-		// ³ª´« ¸ò µÎ °³¿Í gcdÀ» °öÇÑ´Ù.* gcd
-		// * / ÇÏ³ª¾¿ ³¯¸®°í °öÇÑ´Ù. lcm = num1*num2/gcd;
+		// ìµœì†Œê³µë°°ìˆ˜(least common multiple) êµ¬í•˜ê¸°
+		// ë‘ ì •ìˆ˜num1,2ì— gcdë¥¼ ë‚˜ëˆˆë‹¤.num1/gcd, num2/gcd
+		// ë‚˜ëˆˆ ëª« ë‘ ê°œì™€ gcdì„ ê³±í•œë‹¤.* gcd
+		// * / í•˜ë‚˜ì”© ë‚ ë¦¬ê³  ê³±í•œë‹¤. lcm = num1*num2/gcd;
 
 		Scanner sc = new Scanner(System.in);
 		int lcm = 0;
 		int gcd = 1;
 
-		System.out.println("ÃÖ´ë °ø¾à¼ö&ÃÖ¼Ò °ø¹è¼ö ±¸ÇÏ±â");
-		System.out.print("¼ýÀÚ 1 ÀÔ·Â>> ");
+		System.out.println("ìµœëŒ€ ê³µì•½ìˆ˜&ìµœì†Œ ê³µë°°ìˆ˜ êµ¬í•˜ê¸°");
+		System.out.print("ìˆ«ìž 1 ìž…ë ¥>> ");
 		int num1 = sc.nextInt();
-		System.out.print("¼ýÀÚ 2 ÀÔ·Â>> ");
+		System.out.print("ìˆ«ìž 2 ìž…ë ¥>> ");
 		int num2 = sc.nextInt();
 
-		for (int i = 2; i < num1; i++) {
+		for (int i = 2; i <= num1; i++) {
 
 			if (num1 % i == 0 && num2 % i == 0) {
 				gcd = i;
@@ -35,8 +35,8 @@ public class Ex211120_01 {
 		}
 
 		lcm = num1 * num2 / gcd;
-		System.out.println("ÃÖ´ë°ø¾à¼ö: " + gcd);
-		System.out.println("ÃÖ¼Ò°ø¹è¼ö: " + lcm);
+		System.out.println("ìµœëŒ€ê³µì•½ìˆ˜: " + gcd);
+		System.out.println("ìµœì†Œê³µë°°ìˆ˜: " + lcm);
 	}
 
 }
