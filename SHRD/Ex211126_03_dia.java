@@ -7,7 +7,14 @@ public class Ex211126_03_dia {
 		int[][] arr = new int[7][7];
 		int cnt = 0;
 		int n = 7;
-
+//도연이 서리기준 코드 		
+// 		for (int i = 0 ; i <= 6; i++) {
+// 			for (int j = 0; j<=6; j++) {
+// 				if (Math.abs(i-3)+Math.abs(j-3)<=3) {//Math.abs() <- 절대값
+// 					n++;
+// 					matrix[i][j] = n;
+		
+		
 		for (int i = 0; i < n; i++) { // 다 0 입력
 			for (int j = 0; j < n; j++) {
 				arr[i][j] = 0;
