@@ -6,31 +6,27 @@ public class Ex211126_02_turn180 {
 
 		int[][] arr1 = new int[5][5];
 		int num = 0;
-		System.out.println("¿øº»");
-		for (int i = 0; i < 5; i++) { // ÀÔ·Â
-			for (int j = 0; j < 5; j++) {
+		int n = 0;
+		
+		System.out.println("Â¿Ã¸ÂºÂ»");
+		for (int i = 0; i < n; i++) { // Ã€Ã”Â·Ã‚
+			for (int j = 0; j < n; j++) {
 				num++;
 				arr1[i][j] = num;
 			}
 		}
-		for (int i = 0; i < 5; i++) {
-			for (int j = 0; j < 5; j++) {
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n; j++) {
 				System.out.printf("%2d ",arr1[i][j]);
 			}
 			System.out.println("");
 		}
 
-		System.out.println("180µµ È¸Àü");
-		for (int i = 0; i < 5; i++) { // 180 ÀÔ·Â
-			for (int j = 0; j < 5; j++) {
-				arr1[i][j] = num;
-				num--;
-			}
-		}
-		
-		for (int i = 0; i < 5; i++) {
-			for (int j = 0; j < 5; j++) {
-				System.out.printf("%2d ",arr1[i][j]);
+		System.out.println("180ÂµÂµ ÃˆÂ¸Ã€Ã¼");
+
+		for (int i = (n-1); i >=0 ; i--) {
+			for (int j = (n-1); j >=0; j--) {
+				System.out.printf("%2d ", arr1[i][j]);
 			}
 			System.out.println("");
 		}
