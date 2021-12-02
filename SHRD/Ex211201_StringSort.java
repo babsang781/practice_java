@@ -11,8 +11,8 @@ public class Ex211201_StringSort {
 	}
 
 	public static String reverseStr(String string) {
-		// StringÀ» char ¹è¿­¿¡ ¹İº¹ÇØ¼­ ³Ö°í, ¼±ÅÃÁ¤·ÄÀ» ÅëÇØ ¹è¿­ Á¤·Ä,
-		// Á¤·ÄµÈ char ¹è¿­À» StringÀ¸·Î ´Ù½Ã º¯È¯ÇÏ¿© return 40ºĞ ¼Ò¿ä
+		// Stringì„ char ë°°ì—´ì— ë°˜ë³µí•´ì„œ ë„£ê³ , ì„ íƒì •ë ¬ì„ í†µí•´ ë°°ì—´ ì •ë ¬,
+		// ì •ë ¬ëœ char ë°°ì—´ì„ Stringìœ¼ë¡œ ë‹¤ì‹œ ë³€í™˜í•˜ì—¬ return 40ë¶„ ì†Œìš”
 		char min = 0;
 		char temp = 0;
 		char[] arr = new char[string.length()];
@@ -36,13 +36,25 @@ public class Ex211201_StringSort {
 		return string;
 	}
 
+		public static String reverseStr2(String string) {
+		// ë‹¤ë¥¸ í•¨ìˆ˜ë¥¼ ì´ìš©í•´ ê°™ì€ ìˆœì„œë¥¼ ì‹¤í–‰...
+		String[] arr = string.split(""); // String ë°°ì—´ë¡œ ë³€í™˜
+		Arrays.sort(arr); // ì •ë ¬
+		return String.join("", arr);
+	}
+
 	public static String reverseStr1(String string) {
-		// ´Ù¸¥ ÇÔ¼ö¸¦ ÀÌ¿ëÇØ °°Àº ¼ø¼­¸¦ ½ÇÇà...
-		//char[] arr = string.toCharArray();
-		char[] arr = string.split("");
-		Arrays.sort(arr);
-		String sorted = new String(arr);
-		return sorted;
+//		 ë‹¤ë¥¸ í•¨ìˆ˜ë¥¼ ì´ìš©í•´ ê°™ì€ ìˆœì„œë¥¼ ì‹¤í–‰...
+		char[] arr = string.toCharArray(); // char ë°°ì—´ë¡œ ë³€í™˜
+		Arrays.sort(arr); // ì •ë ¬
+		return String.valueOf(arr); // char array toString method:2
+
+//		ì½”ë“œëŠ” ì„¸ ì¤„ì´ì§€ë§Œ ê²°êµ­ì€ 4ì¤„ë¡œ í•˜ëŠ” ê²Œ ë” ê¹”ë” í•  ê²ƒ ê°™ë‹¤.
+//		char[] arr = string.toCharArray();  // char ë°°ì—´ë¡œ ë³€í™˜ 
+//		Arrays.sort(arr);  // ì •ë ¬ 
+//		String sorted = new String(arr);  // char array toString method:2 
+//		return sorted;
+
 	}
 
 }
