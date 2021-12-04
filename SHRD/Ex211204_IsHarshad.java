@@ -7,7 +7,7 @@ public class Ex211204_IsHarshad {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
-		System.out.print("ÀÔ·Â>>");
+		System.out.print("ì…ë ¥>>");
 		String n = sc.next();
 
 		System.out.println(isHarshad(n));
@@ -16,7 +16,8 @@ public class Ex211204_IsHarshad {
 
 	private static boolean isHarshad(String n) {
 
- 		//Àú ¼º´É ¹öÀü: ¹®ÀÚ>¹®ÀÚ¿­>¼ıÀÚ 
+ 		//LOW QUALITY VERSION: STRING> STRING ARRAY> INT 
+		
 		String[] narr = n.split("");
 		int sum = 0;
 
