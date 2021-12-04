@@ -5,47 +5,34 @@ import java.util.Scanner;
 public class Ex211121_01 {
 
 	public static void main(String[] args) {
-		// ¼ÒÀÎ¼öºÐÇØ ¹®Á¦:
-		// °ªÀ» ÀÔ·Â¹Þ¾Æ¼­, [(ÀÔ·Â¹ÞÀº °ª) = (¼ÒÀÎ¼ö)*(¼ÒÀÎ¼ö)*...]À¸·Î Ãâ·Â
+		// ì†Œì¸ìˆ˜ë¶„í•´ ë¬¸ì œ:
+		// ê°’ì„ ìž…ë ¥ë°›ì•„ì„œ, [(ìž…ë ¥ë°›ì€ ê°’) = (ì†Œì¸ìˆ˜)*(ì†Œì¸ìˆ˜)*...]ìœ¼ë¡œ ì¶œë ¥
 
-		// -> ¼ÒÀÎ¼öºÐÇØ ÇÏ´Â ¹ý:
-		// 1. °¡ÀåÀÛÀº ¼Ò¼ö i =1 ¼±¾ð
-		// 2. ¹Ýº¹¹® i <= num±îÁö
-		// 3. (if) i ·Î ³ª´« ³ª¸ÓÁö°¡ 0 ÀÌ ¾Æ´Ï¸é, i Áõ°¡ ´Ù½Ã ¹Ýº¹
-		// 4. i ·Î ³ª´« ³ª¸ÓÁö°¡ 0 ÀÌ ¸ÂÀ¸¸é,
-		// 5. ÀÌÁß ¹Ýº¹¹®: i Áõ°¡ ÀÌÀü¿¡ °°Àº ¼ÒÀÎ¼öi °¡ Á¦°öÀÎ °æ¿ì È®ÀÎ
-		// 6. (if)Áõ°¡ÇÏÁö ¾ÊÀº i·Î (num/result)¸¦ ³ª´« ³ª¸ÓÁö°¡ 0ÀÎÁö È®ÀÎ
-		// 7. °°Àº i ·Î ³ª´©¾î Áö¸é ("*" +i); Ãâ·Â && result ¿¡ i °öÇÔ
-		// 8. ´Ù È®ÀÎÇÏ¸é ÀÌÁß ¹Ýº¹¹® ³ª°¡±â
-		// 9. (if)¼ÒÀÎ¼öºÐÇØ ¿Ï·á È®ÀÎ , ¹Ì¿Ï·á½Ã * Ãâ·Â
-		// 10. i Áõ°¡. ³¡.
+		// ìž…ë ¥ ë°›ëŠ”ë‹¤. for ë¬¸ìœ¼ë¡œ n ê¹Œì§€ ë°˜ë³µ,
+		// ì•½ìˆ˜ì¸ì§€ í™•ì¸í•˜ë©´ì„œ, ì•½ìˆ˜ì´ë©´ ì¶œë ¥í•˜ê³ , n ê°’ì„ ê°™ì´ ë‚˜ëˆ”
+		// ê°™ì€ ìˆ˜ ë°˜ë³µì„ êµ¬í•˜ê¸° ìœ„í•´ ì¡°ê±´ë¬¸ìœ¼ë¡œ í™•ì¸í•˜ê³  i ë¥¼ ëºŒ
+		// ë˜ if ë¡œ ëë‚¬ìœ¼ë©´ break, ì¢…ë£Œ.
 
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.print("¼ÒÀÎ¼öºÐÇØ ÇÒ ¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä. : ");
-		int num = sc.nextInt();
+		System.out.print("ì†Œì¸ìˆ˜ë¶„í•´ í•  ìˆ˜ë¥¼ ìž…ë ¥í•˜ì„¸ìš”. : ");
+		int n = sc.nextInt();
+		System.out.print(n + " = ");
 
-		System.out.print(num + " = ");
+		for (int i = 1; i <= n + 1; i++) {
 
-		int result = 1;
-		for (int i = 2; i <= num; i++) {
-			if ((num / result) % i == 0) {
+			if (n % i == 0 && n != i && i != 1) {
+				System.out.print(i + " * ");
+				n /= i;
+				if (n % i == 0) {
+					i--;
+				}
+
+			} else if (n == i) {
 				System.out.print(i);
-				result *= i;
-
-				while ((num / result) % i == 0) { //
-					System.out.print("*" + i);
-					result *= i;
-				}
-
-				if (num != result) {
-					System.out.print("*");
-				}
+				break;
 			}
-
 		}
-
 		sc.close();
 	}
-
 }
