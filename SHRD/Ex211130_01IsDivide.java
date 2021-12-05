@@ -7,18 +7,13 @@ public class Ex211130_01IsDivide {
 		int num2 = 2;
 
 		boolean result = isDivide(num1, num2);
-		System.out.println("°á°ú È®ÀÎ : " + result);
+		System.out.println("Â°Ã¡Â°Ãº ÃˆÂ®Ã€Ã : " + result);
 
 	}
 
 	public static boolean isDivide(int num1, int num2) {
-
-		if (num1 % num2 == 0) {
-			return true;
-		} else {
-			return false;
-		}
-
+		return num1 % num2 == 0;
+			
 	}
 }
-//10ºĞ ³» ¼º°ø
+// ë„ì—°ìŠ¤ ì°¸ê³  ìˆ˜ì •.
