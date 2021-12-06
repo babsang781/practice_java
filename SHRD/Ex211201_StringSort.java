@@ -13,24 +13,23 @@ public class Ex211201_StringSort {
 	public static String reverseStr(String string) {
 		// String을 char 배열에 반복해서 넣고, 선택정렬을 통해 배열 정렬,
 		// 정렬된 char 배열을 String으로 다시 변환하여 return 40분 소요
-		char min = 0;
-		char temp = 0;
-		char[] arr = new char[string.length()];
 
+// 		char[] arr = new char[string.length()];
+// 		for (int i = 0; i < string.length(); i++) {
+// 			arr[i] = string.charAt(i);
+// 		}
+		
+		char[] arr = string.toCharArray();
+		
+		char min = arr[0];
 		for (int i = 0; i < string.length(); i++) {
-			arr[i] = string.charAt(i);
-		}
-
-		for (int i = 0; i < string.length(); i++) {
-			min = arr[i];
 			for (int j = i; j < string.length(); j++) {
-				if (arr[j] < min) {
-					temp = min;
+				if (arr[i] > arr[j]) {
 					min = arr[j];
-					arr[j] = temp;
+					arr[j] = arr[i];
+					arr[i] = min;
 				}
 			}
-			arr[i] = min;
 		}
 		string = String.valueOf(arr);
 		return string;
