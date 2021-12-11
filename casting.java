@@ -10,7 +10,7 @@ public class casting {
         
         String id =  JOptionPane.showInputDialog("Enter a ID");
         
-        System.out.println(id);
+
 	}
 
 }
