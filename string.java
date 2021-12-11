@@ -7,8 +7,6 @@ public class string {
         int a = 1;
         System.out.println(a);
         
-        String c = "hello world";
-        System.out.println(c);
 	}
 
 }
